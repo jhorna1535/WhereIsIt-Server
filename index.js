@@ -22,3 +22,16 @@ mongoose
     process.exit(1); // Exit the process with a failure code
   });
 
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+
+
+// Health Check
+app.get("/", (req, res) => {
+  res.send("Lost and Found Server is running...");
+});
+
+// Error Handling
+app.use(errorHandler);
